@@ -13,7 +13,7 @@ We'll need to be able to see a detailed view for each individual movie, includin
 
 ## Get Everything Up and Running
 
-1. `npm install`.
+[x]1. `npm install`.
 2. `npm run test` to verify that the Cypress tests run.
     - One test (`✓ E2E: Loads Movies Correctly`) should pass, while three other tests should fail.
     - Be sure to let us know immediately if this doesn't work.
