@@ -61,7 +61,7 @@ export default function MovieDetails() {
       }}
     >
       <Typography variant="h2">{movie.title}</Typography>
-      <img src={`/${movie.poster}`} alt={movie.title} />
+      <img src={`/${movie.poster}`} alt={movie.title} style={{ height: "50vh" }} />
       <Grid
         container
         spacing={3}
@@ -85,7 +85,7 @@ export default function MovieDetails() {
           marginY: "10px",
           textAlign: "left",
           whiteSpace: "pre-wrap",
-          textIndent: "20px",
+          textIndent: "50px",
           color: palette?.muted,
           backgroundColor: palette?.darkMuted,
           padding: "10px",
