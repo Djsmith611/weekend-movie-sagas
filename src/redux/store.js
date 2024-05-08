@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { configureStore } from "@reduxjs/toolkit";
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
@@ -47,14 +47,15 @@ const genres = (state = [], action) => {
 }
 
 // Create one store that all components can use
-const storeInstance = createStore(
-  combineReducers({
+const storeInstance = configureStore({
+  reducer: {
     movies,
     genres,
-  }),
-  // Add sagaMiddleware to our store
-  applyMiddleware(sagaMiddleware, logger),
-);
+  },
+  middleware: (getDefaultMiddleWare) => {
+    return getDefaultMiddleWare().concat(sagaMiddleware, logger);
+  },
+});
 
 // Pass rootSaga into our sagaMiddleware
 sagaMiddleware.run(rootSaga);
