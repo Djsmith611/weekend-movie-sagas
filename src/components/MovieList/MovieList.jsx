@@ -21,11 +21,12 @@ function MovieList() {
       <Typography variant="h1">MovieList</Typography>
       <ImageList cols={3} gap={16}>
         {movies.map((movie) => (
-          <ImageListItem key={movie.id}>
+          <ImageListItem key={movie.id} data-testid="movieItem">
             <img
               src={movie.poster}
               alt={movie.title}
               onClick={() => handleNavigate(movie.id)}
+              data-testid="toDetails"
             />
             <ImageListItemBar
               title={movie.title}
