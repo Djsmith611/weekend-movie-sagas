@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import MovieList from '../MovieList/MovieList';
-import './App.css';
+import MovieList from "../MovieList/MovieList";
+import MovieDetails from "../MovieDetails/MovieDetails";
+import "./App.css";
 
 function App() {
   return (
@@ -8,11 +9,10 @@ function App() {
       <h1>The Movies Saga!</h1>
       <Router>
         <Routes>
-          <Route exact path="/" element={<MovieList/>} />
-        {/* Details page */}
-
-        {/* Add Movie page */}
-        </Routes>     
+          <Route exact path="/" element={<MovieList />} />
+          <Route path="/details/:id" element={<MovieDetails />} />
+          {/* Add Movie page */}
+        </Routes>
       </Router>
     </div>
   );
