@@ -9,7 +9,7 @@ We'll need to be able to see a detailed view for each individual movie, includin
 ## Database Setup
 
 [x]1. Create a database named `saga_movies_weekend`.
-2. Run the queries from `database.sql` on the `saga_movies_weekend` database.
+[x]2. Run the queries from `database.sql` on the `saga_movies_weekend` database.
 
 ## Get Everything Up and Running
 
