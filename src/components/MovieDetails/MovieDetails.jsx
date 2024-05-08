@@ -1,13 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
+import { useParams } from "react-router-dom";
 
-export default function MovieDetails({movie}) {
-  const genres = useSelector(store => store.activeGenres);
+export default function MovieDetails() {
+  const { id } = useParams();
+  const movie = useSelector(store => store.movies.find(movie => movie.id === id));
+  const [genres, setGenres] = useState([]);
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
-    dispatch({ type:"GET_DETAILS", payload:movie.id });
+    const genresToSet = dispatch({ type:"GET_DETAILS", payload:id });
+    setGenres(genresToSet);
   }, [])
+
   return (
     <div>
       <h2>{movie.title}</h2>
