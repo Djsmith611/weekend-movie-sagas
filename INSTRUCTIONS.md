@@ -17,8 +17,8 @@ We'll need to be able to see a detailed view for each individual movie, includin
 [x]2. `npm run test` to verify that the Cypress tests run.
     - One test (`✓ E2E: Loads Movies Correctly`) should pass, while three other tests should fail.
     - Be sure to let us know immediately if this doesn't work.
-3. `npm run server` to run the server on port 5001.
-4. `npm run client` to run the React app on port 5173.
+[x]3. `npm run server` to run the server on port 5001.
+[x]4. `npm run client` to run the React app on port 5173.
 
 ## Notes
 
