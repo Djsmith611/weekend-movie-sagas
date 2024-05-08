@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './MovieList.css';
+import { Typography, ImageList, ImageListItem, ImageListItemBar, Button } from '@mui/material'; // Import Material-UI components
 import { useNavigate } from 'react-router-dom';
 
 function MovieList() {
@@ -18,18 +18,24 @@ function MovieList() {
 
   return (
     <main>
-      <h1>MovieList</h1>
-      <section className="movies">
-        {movies.map(movie => {
-          return (
-            <div data-testid='movieItem' key={movie.id}>
-              <h3>{movie.title}</h3>
-              <img data-testid="toDetails" src={movie.poster} alt={movie.title}
-              onClick={() => handleNavigate(movie.id)}/>
-            </div>
-          );
-        })}
-      </section>
+      <Typography variant="h1">MovieList</Typography>
+      <ImageList cols={3} gap={16}>
+        {movies.map((movie) => (
+          <ImageListItem key={movie.id}>
+            <img
+              src={movie.poster}
+              alt={movie.title}
+              onClick={() => handleNavigate(movie.id)}
+            />
+            <ImageListItemBar
+              title={movie.title}
+              actionIcon={
+                <Button onClick={() => handleNavigate(movie.id)}>Details</Button>
+              }
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
     </main>
   );
 }
