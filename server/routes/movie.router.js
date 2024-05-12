@@ -67,4 +67,22 @@ router.post('/', (req, res) => {
     })
 })
 
+router.put('/:id', (req, res) => {
+  const id = req.params.id;
+  const {title, description} = req.body; 
+  const sqlText = `
+    UPDATE "movies"
+    SET "title" = $2, "description" = $3
+    WHERE "id" = $1;
+  `
+  pool
+    .query(sqlText, [id, title, description])
+    .then((response) => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+})
+
 module.exports = router;

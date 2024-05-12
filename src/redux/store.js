@@ -8,6 +8,7 @@ import axios from 'axios';
 function* rootSaga() {
   yield takeEvery('FETCH_MOVIES', fetchAllMovies);
   yield takeEvery('GET_DETAILS', fetchThisGenres);
+  yield takeEvery('UPDATE_MOVIE', updateMovie)
 }
 
 function* fetchThisGenres(action) {
@@ -32,6 +33,21 @@ function* fetchAllMovies() {
     });
   } catch (error) {
     console.log('fetchAllMovies error:', error);
+  }
+}
+
+function* updateMovie(action) {
+  try{
+    const id = action.payload.id;
+    const title = action.payload.title;
+    const description = action.payload.description;
+    const body = {title:title, description:description};
+    yield axios.put(`/api/movies/${id}`, body );
+    yield put ({
+      type:"FETCH_MOVIES",
+    })
+  } catch(error) {
+    console.log('updateMovie error:', error);
   }
 }
 

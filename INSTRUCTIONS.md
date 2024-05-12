@@ -71,10 +71,10 @@ Hint: You can make a `GET` request for a specific movie! Remember `req.params` a
 
 As one of your last projects, it's possible you will be sharing this with employers, so be sure to follow best practices and make it look good!
 
-- [ ] Invest some time in styling it up.
-    - [ ] Research cards for your movie posters on the list page.
-    - [ ] Research grid for your movie posters on the Movie List page.
-- [ ] Commit your code frequently! You should have at 15+ commits on a project of this size. Use branches to help break down your features.
+- [x] Invest some time in styling it up.
+    - [x] Research cards for your movie posters on the list page.
+    - [x] Research grid for your movie posters on the Movie List page.
+- [x] Commit your code frequently! You should have at 15+ commits on a project of this size. Use branches to help break down your features.
 - [ ] Comment your code.
 - [ ] Update the `README` to include a description of the project in your own words.
 
@@ -108,7 +108,7 @@ Allow the app to still work when the details page gets refreshed.
 
 - The React Router route for the details page would be something like `/#/details/1` for the movie with an id of `1`. Research the `useParams` hook for React Router. (Be sure to look for **version 5**, or **v5**.)
 
-### 3. Edit Page
+### [x]3. Edit Page
 
 On the details page, add an edit button that brings the user to the edit page.
 

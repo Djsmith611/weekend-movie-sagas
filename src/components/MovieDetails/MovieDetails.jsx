@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import MovieDetailsEdit from "./MovieDetailsEdit";
 import {
   Box,
+  Button,
   Chip,
   CircularProgress,
   Divider,
@@ -14,8 +16,8 @@ import NavigationIcon from "@mui/icons-material/Navigation";
 import { usePalette } from "react-palette";
 
 export default function MovieDetails() {
+  const [isEdit, setIsEdit] = useState(false);
   const { id } = useParams();
-  const [backgroundGradient, setBackgroundGradient] = useState("");
   const movie = useSelector((store) =>
     store.movies.find((item) => item.id === parseInt(id))
   );
@@ -51,6 +53,10 @@ export default function MovieDetails() {
     navigate("/");
   };
 
+  const toggleEdit = () => {
+    setIsEdit(!isEdit);
+  }
+
   return (
     <div
       data-testid="movieDetails"
@@ -60,6 +66,7 @@ export default function MovieDetails() {
         minHeight: "100vh",
       }}
     >
+      <MovieDetailsEdit isEdit={isEdit} toggleEdit={toggleEdit} movie={movie} />
       <Typography variant="h2">{movie.title}</Typography>
       <img src={`/${movie.poster}`} alt={movie.title} style={{ height: "50vh" }} />
       <Grid
@@ -76,7 +83,7 @@ export default function MovieDetails() {
           </Grid>
         ))}
       </Grid>
-      <Divider>Description</Divider>
+      <Divider>Description<Button variant="text" onClick={toggleEdit}>Edit</Button></Divider>
       <Typography
         variant="body1"
         sx={{
