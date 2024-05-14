@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
+/**
+ * GET all movies ordered by name
+ */
 router.get('/', (req, res) => {
   const query = `
     SELECT * FROM "movies"
@@ -67,6 +70,9 @@ router.post('/', (req, res) => {
     })
 })
 
+/**
+ * UPDATES the actively displayed movie desription and title
+ */
 router.put('/:id', (req, res) => {
   const id = req.params.id;
   const {title, description} = req.body; 
