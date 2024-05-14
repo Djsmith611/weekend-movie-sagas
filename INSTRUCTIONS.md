@@ -124,7 +124,7 @@ The edit page should have these buttons:
 
 ### Other Ideas
 
-- [ ] Display the current values in the input (title) and textarea (description) on the Edit Page
+- [x] Display the current values in the input (title) and textarea (description) on the Edit Page
 - [ ] Move sagas and reducers out of your `store.js` and into separate files (ideally in `src/redux/reducers/` and `src/redux/sagas/` folders).
 - [ ] Allow the user to add a genre to a movie.
 - [ ] Allow the user to remove a genre from a movie.
