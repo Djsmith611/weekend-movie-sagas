@@ -1,7 +1,14 @@
+import { TextField } from '@mui/material'
 import React from 'react'
 
 export default function AddMovie() {
   return (
-    <div>AddMovie</div>
+    <div>
+        <form action="">
+            <TextField />
+            <TextField />
+            
+        </form>
+    </div>
   )
 }

@@ -14,7 +14,7 @@ This project is a web-based movie list application. Movie data is stored in a da
 
 ## Features 
 
-- Adding movies to the list
+- Adding movies to the list(Future update)
 - Updating movie details
 - Clicking to navigate to a details page (with generated color palette)
 
@@ -74,7 +74,7 @@ This project is a web-based movie list application. Movie data is stored in a da
 
 ### Usage
 
-- Use the provided form to add a new movie to the list.
+- Use the provided form to add a new movie to the list.(future update)
 - Click on a movie to view it's details.
 - Click on the edit button to alter a movie's details.
 
