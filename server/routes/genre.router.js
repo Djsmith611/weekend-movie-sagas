@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
+/**
+ * GET all from genres table.
+ * sends rows from "genres" to client.
+ */
 router.get('/', (req, res) => {
   const sqlText = `
     SELECT * FROM "genres";
