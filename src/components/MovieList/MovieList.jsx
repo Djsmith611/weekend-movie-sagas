@@ -4,15 +4,18 @@ import { Typography, ImageList, ImageListItem, ImageListItemBar, Button } from '
 import { useNavigate } from 'react-router-dom';
 
 function MovieList() {
+  /* HOOKS */
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const movies = useSelector(store => store.movies);
+  /* END HOOKS */
 
-  const handleNavigate = (id) => {
+  const movies = useSelector(store => store.movies); // Selecting all movies from Redux
+
+  const handleNavigate = (id) => { // Handles Navigation to a movie's detail page
     navigate(`/details/${id}`);
   }
 
-  useEffect(() => {
+  useEffect(() => { // Fetches movies on page load
     dispatch({ type: 'FETCH_MOVIES' });
   }, []);
 
