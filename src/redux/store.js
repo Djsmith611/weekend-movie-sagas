@@ -4,13 +4,14 @@ import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 
-// Create the rootSaga generator function
+// rootSaga generator function
 function* rootSaga() {
   yield takeEvery('FETCH_MOVIES', fetchAllMovies);
   yield takeEvery('GET_DETAILS', fetchThisGenres);
   yield takeEvery('UPDATE_MOVIE', updateMovie)
 }
 
+// Fetches the genres of a specific movie
 function* fetchThisGenres(action) {
   const id = action.payload;
   try{
@@ -22,6 +23,7 @@ function* fetchThisGenres(action) {
   }
 }
 
+// Fetches all movies
 function* fetchAllMovies() {
   try {
     // Get the movies:
@@ -36,6 +38,7 @@ function* fetchAllMovies() {
   }
 }
 
+// Updates the title and description of a single movie
 function* updateMovie(action) {
   try{
     const id = action.payload.id;
@@ -64,7 +67,7 @@ const movies = (state = [], action) => {
   }
 }
 
-// Used to store the movie genres
+// Used to store the active movie genres
 const activeGenres = (state = [], action) => {
   switch (action.type) {
     case 'SET_GENRES':
@@ -75,7 +78,7 @@ const activeGenres = (state = [], action) => {
 }
 
 // Create one store that all components can use
-const storeInstance = configureStore({
+const storeInstance = configureStore({ // Updated Redux to use configureStore
   reducer: {
     movies,
     activeGenres,
