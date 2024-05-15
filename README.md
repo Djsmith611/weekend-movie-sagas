@@ -1,6 +1,6 @@
 # React Movie List Application
 
-This project is a web-based movie list application. Movie data is stored in a database that communicates with a server. Users can easily add, edit, and delete movies. The user interface is designed using Material UI. Movies are displayed in a list that is easy to navigate.
+This project is a web-based movie list application. Movie data is stored in a database that communicates with a server. Users can edit movie details. The user interface is designed using Material UI. Movies are displayed in a list that is easy to navigate.
 
 ![App Screenshot](/public/images/preview.png)
 
@@ -10,7 +10,6 @@ This project is a web-based movie list application. Movie data is stored in a da
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 
 ## Features 
 
